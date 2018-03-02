@@ -1,0 +1,22 @@
+HKCR
+{
+	NoRemove CLSID
+	{
+		ForceRemove {2C976709-1F7F-49C7-8583-8A4E2CC98A57} = s 'Card Class'
+		{
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			ForceRemove Control
+			ForceRemove 'ToolboxBitmap32' = s '%MODULE%, 106'
+			MiscStatus = s '0'
+			{
+			    '1' = s '%OLEMISC%'
+			}
+			TypeLib = s '{960FE15C-7E3E-4847-8B64-FAE9E12E17AA}'
+			Version = s '1.0'
+		}
+	}
+}

@@ -1,0 +1,20 @@
+﻿@using Trirand.Web.Mvc
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>@ViewBag.Title</title>
+    <script src="@Url.Content("~/Scripts/jquery-1.4.4.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery-ui.min.js")" type="text/javascript"></script>    
+    <link href="@Url.Content("~/Content/themes/base/images/logon.css")" rel="stylesheet" type="text/css" />
+</head>
+
+<body>       
+	<OBJECT ID="kk" WIDTH=0 HEIGHT=0 style="display:none"
+	 CLASSID="CLSID:01A8EC23-6702-476C-AF5F-E934C71D0FE6" codebase="@Url.Content("~/Content/DXInfoCardActiveX.CAB")#version=1.0.0.1">
+	</OBJECT>
+   
+            @RenderBody()
+					
+</body>
+</html>

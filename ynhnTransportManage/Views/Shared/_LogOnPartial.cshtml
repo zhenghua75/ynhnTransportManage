@@ -1,0 +1,15 @@
+﻿@if(Request.IsAuthenticated) {
+    
+    DXInfo.Profile.CustomProfile profile = ProfileCommon.GetUserProfile();
+    //profile.DeptId = Guid.Parse("46332EF4-0E5E-4A0E-9014-C9FD20B597EA");
+    //profile.FullName = "郑华";
+    //profile.Save();
+    <text>欢迎使用<b>@profile.FullName</b>(@profile.DeptName)!
+
+    
+    
+    [ @Html.ActionLink("注销", "LogOff", "Account") ]</text>
+}
+else {
+    @:[ @Html.ActionLink("登录", "LogOn", "Account") ]
+}

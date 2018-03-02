@@ -1,0 +1,53 @@
+// DXInfoEkeyActiveX.idl : ActiveX 控件项目的类型库源。
+
+// 此文件将由 MIDL 编译器工具处理以
+// 产生类型库(DXInfoEkeyActiveX.tlb)，该类型库将成为
+// DXInfo.Ekey.ActiveX.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(A4EB30E6-D1B5-437F-9436-7F5D11D72777), version(1.0),
+  control ]
+library DXInfoEkeyActiveXLib
+{
+	importlib(STDOLE_TLB);
+
+	//  CDXInfoEkeyActiveXCtrl 的主调度接口
+	[ 
+		uuid(42E5B082-0DE9-437B-BBF3-F779DEA99A33)	
+	]
+	dispinterface _DDXInfoEkeyActiveX
+	{
+		properties:
+		methods:
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+			[id(1)] VARIANT_BOOL Verify(void);
+			[id(2)] BSTR GetHardwareID(void);
+	};
+
+	//  CDXInfoEkeyActiveXCtrl 的事件调度接口
+
+	[ 
+		uuid(C719E07A-1214-4536-B717-25E3C2ECBF91)	
+	]
+	dispinterface _DDXInfoEkeyActiveXEvents
+	{
+		properties:
+			//  事件接口没有任何属性
+
+		methods:
+	};
+
+	//  CDXInfoEkeyActiveXCtrl 的类信息
+	[
+		uuid(5790C5F1-AAF8-4E72-BDE7-8605A5000AD4)
+	]
+	coclass DXInfoEkeyActiveX
+	{
+		[default] dispinterface _DDXInfoEkeyActiveX;
+		[default, source] dispinterface _DDXInfoEkeyActiveXEvents;
+	};
+
+};

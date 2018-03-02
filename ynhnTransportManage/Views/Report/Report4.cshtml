@@ -1,0 +1,15 @@
+﻿@using Trirand.Web.Mvc
+@model ynhnTransportManage.Models.Report4Grid   
+@{
+    ViewBag.Title = "验收货物情况报表";
+}
+
+
+@Html.Trirand().JQGrid(Model.ReportGrid, "ReportGrid")
+@using (Html.BeginForm("Report4ExportToExcel", "Report", FormMethod.Post, new { id = "ExcelForm" })) { }        
+ <script type="text/javascript">
+
+     function customButtonClicked() {
+         $(ExcelForm).submit();
+     }           
+    </script>

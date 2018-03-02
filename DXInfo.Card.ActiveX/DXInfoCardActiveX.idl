@@ -1,0 +1,18 @@
+// DXInfoCardActiveX.idl : DXInfo.Card.ActiveX 的 IDL 源
+//
+
+// 此文件将由 MIDL 工具处理以
+// 产生类型库(DXInfoCardActiveX.tlb)和封送处理代码。
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	uuid(391898D2-8138-4796-8509-3E308E426ED5),
+	version(1.0),
+]
+library DXInfoCardActiveXLib
+{
+	importlib("stdole2.tlb");
+};
+

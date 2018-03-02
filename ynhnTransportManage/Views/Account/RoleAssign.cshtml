@@ -1,0 +1,13 @@
+﻿@using Trirand.Web.Mvc
+@model ynhnTransportManage.Models.RoleAssignGridModel
+@{
+    ViewBag.Title = "角色分配";
+}
+@Html.Trirand().JQGrid(Model.RolesGrid, "RolesGrid")
+@Html.Trirand().JQGrid(Model.UsersGrid, "UsersGrid")
+
+<script type="text/javascript">
+    function showUsersSubGrid(subgrid_id, row_id) {
+        showSubGrid_UsersGrid(subgrid_id, row_id);
+    }   
+    </script>

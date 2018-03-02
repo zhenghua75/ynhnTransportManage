@@ -1,0 +1,58 @@
+// DXInfoCardActvieX.idl : ActiveX 控件项目的类型库源。
+
+// 此文件将由 MIDL 编译器工具处理以
+// 产生类型库(DXInfoCardActvieX.tlb)，该类型库将成为
+// DXInfo.Card.ActvieX.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(7E00785F-34DD-4877-B73D-D13375141358), version(1.0),
+  control ]
+library DXInfoCardActvieXLib
+{
+	importlib(STDOLE_TLB);
+
+	//  CDXInfoCardActvieXCtrl 的主调度接口
+	[ 
+		uuid(4E12BC45-D49E-400D-86FA-DE5D29132BF1)	
+	]
+	dispinterface _DDXInfoCardActvieX
+	{
+		properties:
+		methods:
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+			[id(1)] BSTR ReadCard(void);
+			[id(2)] VARIANT_BOOL PutCard(BSTR data);
+			[id(3)] VARIANT_BOOL Write(BSTR data);
+			[id(4)] VARIANT_BOOL RecycleCard(void);
+	};
+
+	//  CDXInfoCardActvieXCtrl 的事件调度接口
+
+	[ 
+		uuid(BAB78D8C-29BA-4661-B1A4-91517276417D)	
+	]
+	dispinterface _DDXInfoCardActvieXEvents
+	{
+		properties:
+			//  事件接口没有任何属性
+
+		methods:
+	};
+
+	//  CDXInfoCardActvieXCtrl 的类信息 此为clsid
+	//<OBJECT ID="cc" WIDTH=111 HEIGHT=111
+	// CLASSID="CLSID:43246D5D-8E72-43C9-BAB1-EE733C3DDCA4">
+	//</OBJECT>
+	[
+		uuid(43246D5D-8E72-43C9-BAB1-EE733C3DDCA4)
+	]
+	coclass DXInfoCardActvieX
+	{
+		[default] dispinterface _DDXInfoCardActvieX;
+		[default, source] dispinterface _DDXInfoCardActvieXEvents;
+	};
+
+};

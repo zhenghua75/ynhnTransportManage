@@ -1,0 +1,6 @@
+﻿@using Trirand.Web.Mvc
+@model ynhnTransportManage.Models.UnitOfMeasuresGridModel
+@{
+    ViewBag.Title = "计量单位";
+}
+@Html.Trirand().JQGrid(Model.UnitOfMeasuresGrid, "UnitOfMeasuresGrid")

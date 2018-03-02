@@ -1,0 +1,14 @@
+﻿@using Trirand.Web.Mvc
+@model ynhnTransportManage.Models.RolesJqGridModel
+@{
+    ViewBag.Title = "管理角色";
+}
+@Html.Trirand().JQGrid(Model.Grid, "JQGrid1")
+@using (Html.BeginForm("RolesExportToExcel", "Account", FormMethod.Post, new { id = "RolesExportToExcel" })) { }        
+<script type="text/javascript">
+
+    function RolesButtonClicked() {
+        $(RolesExportToExcel).submit();
+    }       
+    
+    </script>

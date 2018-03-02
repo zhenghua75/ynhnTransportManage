@@ -1,0 +1,409 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AC751DDF-055D-402B-8BAD-C6714A9391E0}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ynhnTransportManage</RootNamespace>
+    <AssemblyName>ynhnTransportManage</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DeployIisAppPath>Default Web Site/ynhnTransportManage</DeployIisAppPath>
+    <PublishDatabases>false</PublishDatabases>
+    <ExcludeGeneratedDebugSymbol>true</ExcludeGeneratedDebugSymbol>
+    <ExcludeApp_Data>true</ExcludeApp_Data>
+    <PackageAsSingleFile>false</PackageAsSingleFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.4.1.10311.0\lib\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages" />
+    <Reference Include="System.Web.Helpers" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseInfoController.cs" />
+    <Compile Include="Controllers\CardController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
+    <Compile Include="Controllers\TransportController.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Helper.cs" />
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\CardsModels.cs" />
+    <Compile Include="Models\CustomeProfileModels.cs" />
+    <Compile Include="Models\DeptModels.cs" />
+    <Compile Include="Models\DriversModel.cs" />
+    <Compile Include="Models\EnumerableToEnumerableTConverter.cs" />
+    <Compile Include="Models\InFactoryModels.cs" />
+    <Compile Include="Models\InventoryModels.cs" />
+    <Compile Include="Models\JqGridModel.cs" />
+    <Compile Include="Models\KeyManageModels.cs" />
+    <Compile Include="Models\LinesModels.cs" />
+    <Compile Include="Models\LoadModels.cs" />
+    <Compile Include="Models\OutFactoryModels.cs" />
+    <Compile Include="Models\ParaModels.cs" />
+    <Compile Include="Models\ReportModels.cs" />
+    <Compile Include="Models\ShipmentModels.cs" />
+    <Compile Include="Models\UnitsModels.cs" />
+    <Compile Include="Models\VehicleListModels.cs" />
+    <Compile Include="Models\VehicleModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\menu\副本 superfish.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\themes\base\images\logon.css" />
+    <Content Include="Content\menu\superfish-navbar.css" />
+    <Content Include="Content\menu\superfish-vertical.css" />
+    <Content Include="Content\menu\superfish.css" />
+    <Content Include="Content\themes\base\images\bg.png" />
+    <Content Include="Content\themes\base\images\logo.png" />
+    <Content Include="Content\themes\base\images\logon.jpg" />
+    <Content Include="Content\themes\base\images\submit.jpg" />
+    <Content Include="Content\themes\base\images\dx.jpg" />
+    <Content Include="Content\themes\base\images\dxlogo.png" />
+    <Content Include="Content\themes\base\jquery-ui-menu.css" />
+    <Content Include="Content\themes\condition\img01.jpg" />
+    <Content Include="Content\themes\condition\img02.jpg" />
+    <Content Include="Content\themes\condition\img03.gif" />
+    <Content Include="Content\themes\condition\img04.jpg" />
+    <Content Include="Content\themes\condition\img07.jpg" />
+    <Content Include="Content\themes\redmond\images\ui-anim_basic_16x16.gif" />
+    <Content Include="Content\themes\redmond\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\redmond\images\ui-bg_flat_55_fbec88_40x100.png" />
+    <Content Include="Content\themes\redmond\images\ui-bg_glass_75_d0e5f5_1x400.png" />
+    <Content Include="Content\themes\redmond\images\ui-bg_glass_85_dfeffc_1x400.png" />
+    <Content Include="Content\themes\redmond\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\redmond\images\ui-bg_gloss-wave_55_5c9ccc_500x100.png" />
+    <Content Include="Content\themes\redmond\images\ui-bg_inset-hard_100_f5f8f9_1x100.png" />
+    <Content Include="Content\themes\redmond\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="Content\themes\redmond\images\ui-icons_217bc0_256x240.png" />
+    <Content Include="Content\themes\redmond\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\redmond\images\ui-icons_469bdd_256x240.png" />
+    <Content Include="Content\themes\redmond\images\ui-icons_6da8d5_256x240.png" />
+    <Content Include="Content\themes\redmond\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\redmond\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="Content\themes\redmond\images\ui-icons_f9bd01_256x240.png" />
+    <Content Include="Content\themes\redmond\jquery-ui-1.8.2.custom.css" />
+    <Content Include="Content\themes\ui.jqgrid.css" />
+    <Content Include="Content\DXInfoCardActiveX.CAB" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-ui-menu.js" />
+    <Content Include="Scripts\jquery.AddIncSearch.js" />
+    <Content Include="Scripts\jquery.ui.datepicker-zh-CN.js" />
+    <Content Include="Scripts\menu\hoverIntent.js" />
+    <Content Include="Scripts\menu\jquery.bgiframe.min.js" />
+    <Content Include="Scripts\menu\superfish.js" />
+    <Content Include="Scripts\menu\supersubs.js" />
+    <Content Include="Scripts\MyJs.js" />
+    <Content Include="Scripts\trirand\grid.treegrid.js" />
+    <Content Include="Scripts\trirand\i18n\grid.locale-bg.js" />
+    <Content Include="Scripts\trirand\i18n\grid.locale-bg1251.js" />
+    <Content Include="Scripts\trirand\i18n\grid.locale-cat.js" />
+    <Content Include="Scripts\trirand\i18n\grid.locale-cn.js" />
+    <Content Include="Scripts\trirand\i18n\grid.locale-cs.js" />
+    <Content Include="Scripts\trirand\i18n\grid.locale-de.js" />
+    <Content Include="Scripts\trirand\i18n\grid.locale-dk.js" />
+    <Content Include="Scripts\trirand\i18n\grid.locale-el.js" />
+    <Content Include="Scripts\trirand\i18n\grid.locale-en.js" />
+    <Content Include="Scripts\trirand\i18n\grid.locale-fa.js" />
+    <Content Include="Scripts\trirand\i18n\grid.locale-fi.js" />
+    <Content Include="Scripts\trirand\i18n\grid.locale-fr.js" />
+    <Content Include="Scripts\trirand\i18n\grid.locale-he.js" />
+    <Content Include="Scripts\trirand\i18n\grid.locale-is.js" />
+    <Content Include="Scripts\trirand\i18n\grid.locale-it.js" />
+    <Content Include="Scripts\trirand\i18n\grid.locale-ja.js" />
+    <Content Include="Scripts\trirand\i18n\grid.locale-nl.js" />
+    <Content Include="Scripts\trirand\i18n\grid.locale-no.js" />
+    <Content Include="Scripts\trirand\i18n\grid.locale-pl.js" />
+    <Content Include="Scripts\trirand\i18n\grid.locale-pt-br.js" />
+    <Content Include="Scripts\trirand\i18n\grid.locale-pt.js" />
+    <Content Include="Scripts\trirand\i18n\grid.locale-ro.js" />
+    <Content Include="Scripts\trirand\i18n\grid.locale-ru.js" />
+    <Content Include="Scripts\trirand\i18n\grid.locale-sk.js" />
+    <Content Include="Scripts\trirand\i18n\grid.locale-sp.js" />
+    <Content Include="Scripts\trirand\i18n\grid.locale-sv.js" />
+    <Content Include="Scripts\trirand\i18n\grid.locale-tr.js" />
+    <Content Include="Scripts\trirand\i18n\grid.locale-ua.js" />
+    <Content Include="Scripts\trirand\jquery.jqAutoComplete.min.js" />
+    <Content Include="Scripts\trirand\jquery.jqDatePicker.min.js" />
+    <Content Include="Scripts\trirand\jquery.jqGrid.min.3.8.2.js" />
+    <Content Include="Scripts\trirand\jquery.jqGrid.min.js" />
+    <Content Include="Scripts\trirand\jquery.jqGrid.min_bak.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site_base.css" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Scripts\jquery-1.4.4.js" />
+    <Content Include="Scripts\jquery-1.4.4.min.js" />
+    <Content Include="Scripts\jquery-1.4.4-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Account\ChangePassword.cshtml" />
+    <Content Include="Views\Account\ChangePasswordSuccess.cshtml" />
+    <Content Include="Views\Account\LogOn.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LogOnPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DXInfo.DbAuthorizationRuleProvider\DXInfo.DbAuthorizationRuleProvider.csproj">
+      <Project>{4466B80B-2A75-42C6-A45E-807849492755}</Project>
+      <Name>DXInfo.DbAuthorizationRuleProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DXInfo.Models\DXInfo.Models.csproj">
+      <Project>{5CCDEF4A-ED6F-4899-8F9C-419ED1E32D5F}</Project>
+      <Name>DXInfo.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DXInfo.Profile\DXInfo.Profile.csproj">
+      <Project>{28E81454-78C4-4451-96F3-3843F516385E}</Project>
+      <Name>DXInfo.Profile</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DXInfo.Role\DXInfo.Role.csproj">
+      <Project>{B8AFFCF7-5172-4B69-9ED8-6BFBEF9F3BBC}</Project>
+      <Name>DXInfo.Role</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DXInfo.Sitemap\DXInfo.Sitemap.csproj">
+      <Project>{02EC23B2-4B8B-4DD3-AB0B-0D4540889658}</Project>
+      <Name>DXInfo.Sitemap</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Trirand.Web.Mvc\DXInfo.Web.Mvc.csproj">
+      <Project>{999C3286-6D9C-4214-8E16-9DB04764A23B}</Project>
+      <Name>DXInfo.Web.Mvc</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_SitemapPathPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Helpers\Helper.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\RegisterSucess.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Users.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\EditUser.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\UserDetails.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Approved.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\NoApproved.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Roles.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\EditRole.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\DeleteRole.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\AddRole.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\AddUserToRole.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\ForRoleAddUser.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\RolesList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\SitemapsList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\AuthorizationRule.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\themes\redmond\images\Thumbs.db" />
+    <Content Include="Views\Account\RoleAssign.cshtml" />
+    <Content Include="Views\BaseInfo\Dept.cshtml" />
+    <Content Include="Views\BaseInfo\Para.cshtml" />
+    <Content Include="Views\BaseInfo\Vehicle.cshtml" />
+    <Content Include="Views\BaseInfo\Driver.cshtml" />
+    <Content Include="Views\BaseInfo\UnitOfMeasure.cshtml" />
+    <Content Include="Views\BaseInfo\Inventory.cshtml" />
+    <Content Include="Views\Card\Issue.cshtml" />
+    <Content Include="Views\Card\Loss.cshtml" />
+    <Content Include="Views\Card\Found.cshtml" />
+    <Content Include="Views\Card\Add.cshtml" />
+    <Content Include="Views\BaseInfo\Lines.cshtml" />
+    <Content Include="Views\Shared\_Layout2.cshtml" />
+    <Content Include="Views\Transport\InFactory.cshtml" />
+    <Content Include="Views\Transport\InFactorySucess.cshtml" />
+    <Content Include="Views\Transport\Load.cshtml" />
+    <Content Include="Views\Transport\LoadSucess.cshtml" />
+    <Content Include="Views\Transport\Shipment.cshtml" />
+    <Content Include="Views\Transport\ShipmentSucess.cshtml" />
+    <Content Include="Views\Transport\OutFactory.cshtml" />
+    <Content Include="Views\Transport\OutFactorySucess.cshtml" />
+    <Content Include="Views\BaseInfo\Index.cshtml" />
+    <Content Include="Views\Card\Index.cshtml" />
+    <Content Include="Views\Transport\Index.cshtml" />
+    <Content Include="Views\Shared\副本 _Layout_init.cshtml" />
+    <Content Include="Views\Card\Manage.cshtml" />
+    <Content Include="Views\Transport\VehicleList.cshtml" />
+    <Content Include="Views\Report\Index.cshtml" />
+    <Content Include="Views\Report\Report1.cshtml" />
+    <Content Include="Views\Report\Report2.cshtml" />
+    <Content Include="Views\Report\Report3.cshtml" />
+    <Content Include="Views\Report\Report4.cshtml" />
+    <Content Include="Views\BaseInfo\KeyManage.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>1691</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/ynhnTransportManage</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>http://localhost:8300</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

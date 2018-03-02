@@ -1,0 +1,6 @@
+﻿@using Trirand.Web.Mvc
+@model ynhnTransportManage.Models.DeptJqGridModel
+@{
+    ViewBag.Title = "组织机构";
+}
+@Html.Trirand().JQGrid(Model.DeptsGrid, "DeptsGrid")

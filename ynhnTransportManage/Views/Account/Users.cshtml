@@ -1,0 +1,26 @@
+﻿@model ynhnTransportManage.Models.UsersJqGridModel
+@using Trirand.Web.Mvc
+@{
+    ViewBag.Title = "管理用户";
+}
+<p> @Html.ActionLink("创建用户", "Register")</p>
+<div>
+@Html.Trirand().JQGrid(Model.Grid, "JQGrid1")
+@using (Html.BeginForm("ExportToExcel", "Account", FormMethod.Post, new { id = "ExcelForm" })){}        
+</div>
+<script type="text/javascript">
+    function ShowName(cellvalue, options, rowObject) {
+        return rowObject[4];
+    }
+    function UnShowName(cellvalue, options, rowObject) {
+        return "";       
+    }
+</script>
+ <script type="text/javascript">
+
+     function customButtonClicked() {
+         //导出EXEL
+         $(ExcelForm).submit();
+     }       
+    
+    </script>

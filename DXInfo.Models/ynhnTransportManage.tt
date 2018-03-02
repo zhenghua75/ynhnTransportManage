@@ -1,0 +1,73 @@
+﻿<#@ template language="C#" debug="True" hostspecific="True" #>
+<#@ output extension=".cs" #>
+<#@ assembly name="System" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Data" #>
+<#@ assembly name="System.xml" #>
+<#@ assembly name="System.xml.Linq" #>
+
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Data.SqlClient" #>
+<#@ import namespace="System.Data" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Linq" #>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Data.Entity;
+using System.ComponentModel.DataAnnotations;
+
+namespace DXInfo.Models 
+{		
+		<#
+			string connectionString = "data source=localhost;Integrated Security=SSPI;Initial Catalog=ynhnTransportManage;"; 
+			SqlConnection conn = new SqlConnection(connectionString); 
+			conn.Open(); 
+			System.Data.DataTable schema = conn.GetSchema("Tables"); 
+			string selectQuery = "select * from @tableName"; 
+			SqlCommand command = new SqlCommand(selectQuery,conn); 
+			SqlDataAdapter ad = new SqlDataAdapter(command); 
+			System.Data.DataSet ds = new DataSet(); 
+			
+			foreach(System.Data.DataRow row in schema.Rows) 
+			{ 				
+			if(row["table_type"].ToString() == "BASE TABLE")
+			{
+			#> 			
+		public class <#= row["TABLE_NAME"].ToString().Trim('s') #>							
+		{
+			<# 									
+                ds.Tables.Clear();
+				command.CommandText = selectQuery.Replace("@tableName",row["TABLE_NAME"].ToString()); 
+				ad.FillSchema(ds, SchemaType.Mapped, row["TABLE_NAME"].ToString());
+                
+				int order=0;
+				foreach (DataColumn dc in ds.Tables[0].Columns)
+				{					
+				if(ds.Tables[0].PrimaryKey.Contains(dc))
+				{					
+				#>		
+			[Key]
+			[Column(Order=<#=order#>)]
+			<#
+					order ++;
+				}#>			    
+			public <#= dc.DataType.Name #><# if(dc.AllowDBNull && dc.DataType.Name!="String"){  #>?<# } #> <#= dc.ColumnName #> {get ;set;}						
+				<#}#>	
+		}							
+			<#}}#>
+
+		public partial class ynhnTransportManage:DbContext
+		{
+		<#
+		foreach(System.Data.DataRow row in schema.Rows) 
+		{ 				
+		if(row["table_type"].ToString() == "BASE TABLE")
+		{
+		#> 	
+			public DbSet<<#= row["TABLE_NAME"].ToString().Trim('s') #>> <#= row["TABLE_NAME"].ToString()#> {get;set;}
+		<#}}#>
+
+		}
+}

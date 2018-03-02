@@ -1,0 +1,6 @@
+﻿@using Trirand.Web.Mvc
+@model ynhnTransportManage.Models.ParaGridModel
+@{
+    ViewBag.Title = "参数设置";
+}
+@Html.Trirand().JQGrid(Model.ParasGrid, "ParasGrid")

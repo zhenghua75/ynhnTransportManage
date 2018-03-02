@@ -1,0 +1,15 @@
+﻿@using Trirand.Web.Mvc
+@model ynhnTransportManage.Models.Report3Grid   
+@{
+    ViewBag.Title = "车辆卸货进出场报表";
+}
+
+
+@Html.Trirand().JQGrid(Model.ReportGrid, "ReportGrid")
+@using (Html.BeginForm("Report3ExportToExcel", "Report", FormMethod.Post, new { id = "ExcelForm" })) { }    
+ <script type="text/javascript">
+
+     function customButtonClicked() {
+         $(ExcelForm).submit();
+     }           
+    </script>
