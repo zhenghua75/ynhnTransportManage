@@ -181,16 +181,7 @@ bool CDXInfoCard::PutCard(unsigned char data[33])
 	{
 		st = rf_exit(icdev);
 		return false;
-	}
-	////
-	//unsigned char temp[33];
-	//memset(temp,0,33);
-	
-	//unsigned char data_temp[33];
-	//memset(data_temp,0,33);
-
-	//a_hex(data,temp,32);
-	//memcpy(data_temp,temp,16);		
+	}		
 	st = rf_write(icdev,Sec*4,data);		
 	if(st)
 	{

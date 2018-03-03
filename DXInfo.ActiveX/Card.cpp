@@ -13,10 +13,10 @@ STDMETHODIMP CCard::ReadCard(BSTR* data)
 	
 	// TODO: 在此添加调度处理程序代码
 	unsigned char reddata[33];
-	CString akey("zhenghualhg");
-	CString bkey("luohuaigzhh");
-	CString akey_old("A3D4C68CD9E5");
-	CString bkey_old("B01B4C49A3D3");
+	CString akey("123456789012");
+	CString bkey("123456789012");
+	CString akey_old("123456789012");
+	CString bkey_old("123456789012");
 	CDXInfoCard card(akey,bkey,akey_old,bkey_old);
 	if(card.ReadCard(reddata))
 		strResult.Format("%s",reddata);
@@ -30,13 +30,10 @@ STDMETHODIMP CCard::ReadCard(BSTR* data)
 STDMETHODIMP CCard::PutCard(BSTR data, VARIANT_BOOL* issuc)
 {
 	// TODO: 在此添加实现代码
-	CString akey("zhenghualhg");
-	CString bkey("luohuaigzhh");
-	/*CString akey_old("FFFFFFFFFFFF");
-	CString bkey_old("FFFFFFFFFFFF");*/
-	CString akey_old("A3D4C68CD9E5");
-	//CString bkey_old("C03F5591EB08");
-	CString bkey_old("B01B4C49A3D3");
+	CString akey("123456789012");
+	CString bkey("123456789012");
+	CString akey_old("123456789012");
+	CString bkey_old("123456789012");
 	CDXInfoCard card(akey,bkey,akey_old,bkey_old);
 
 	//-----------------
@@ -55,13 +52,10 @@ STDMETHODIMP CCard::PutCard(BSTR data, VARIANT_BOOL* issuc)
 STDMETHODIMP CCard::RecycleCard(VARIANT_BOOL* issuc)
 {
 	// TODO: 在此添加实现代码
-	CString akey("zhenghualhg");
-	CString bkey("luohuaigzhh");
-	/*CString akey_old("FFFFFFFFFFFF");
-	CString bkey_old("FFFFFFFFFFFF");*/
-	CString akey_old("A3D4C68CD9E5");
-	//CString bkey_old("C03F5591EB08");
-	CString bkey_old("B01B4C49A3D3");
+	CString akey("123456789012");
+	CString bkey("123456789012");
+	CString akey_old("123456789012");
+	CString bkey_old("123456789012");
 	CDXInfoCard card(akey,bkey,akey_old,bkey_old);
 	if(card.RecycleCard())
 		*issuc=true;

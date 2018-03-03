@@ -10,9 +10,7 @@ STDMETHODIMP CKey::Verify(VARIANT_BOOL* issuc)
 {
 	// TODO: 在此添加实现代码
 	CString appName("ynhnTransport");
-	//CString password("5d77a67b65d59b5ceec9a7e3cc068e6c");
-	//CString password("1a5ce5b0315c1a63937684df3253f73a");
-	CString password("6e5bfbd7791441d4039ac25c73e5f1b1");
+	CString password("12345678901234567890123456789012");
 	CDXInfoEkey key(appName,password);
 	*issuc = key.Verify();
 	return S_OK;
@@ -26,9 +24,7 @@ STDMETHODIMP CKey::GetHardwareID(BSTR* hdId)
 
 	// TODO: 在此添加调度处理程序代码
 	CString appName("ynhnTransport");
-	//CString password("5d77a67b65d59b5ceec9a7e3cc068e6c");
-	//CString password("1a5ce5b0315c1a63937684df3253f73a");
-	CString password("6e5bfbd7791441d4039ac25c73e5f1b1");
+	CString password("12345678901234567890123456789012");
 	CDXInfoEkey key(appName,password);
 	char hardwareID[64];
 	key.GetHardwareID(hardwareID);
@@ -44,7 +40,7 @@ STDMETHODIMP CKey::GetKeyNo(BSTR* data)
 
 	CString strResult;
 	CString appName("ynhnTransport");
-	CString password("6e5bfbd7791441d4039ac25c73e5f1b1");
+	CString password("12345678901234567890123456789012");
 	CDXInfoEkey key(appName,password);
 	unsigned char keyno[128];
 	key.GetKeyNo(keyno);
